@@ -31,7 +31,7 @@ func TestWorkFlow(t *testing.T) {
 		zone := "europe-west4-c"
 		c, _ := New(context.Background(), project, jsPath, log.Default(), log.Default())
 		sourceImage := "projects/debian-cloud/global/images/family/debian-9"
-		err := c.CreateInstance(context.Background(), zone, "instance6", "n1-standard-2", sourceImage, "pnetwork", "default")
+		err := c.CreateInstance(context.Background(), zone, "instance89", "n1-standard-2", sourceImage, "pnetwork", "default")
 		convey.So(err, convey.ShouldBeNil)
 
 		// Getting the instance

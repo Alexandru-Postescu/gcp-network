@@ -22,7 +22,7 @@ func TestWorkFlow(t *testing.T) {
 		zone := "europe-west4-c"
 		c, _ := New(context.Background(), project, jsPath, log.Default(), log.Default())
 		sourceImage := "projects/debian-cloud/global/images/family/debian-9"
-		err := c.CreateInstance(context.Background(), zone, "instance90", "n1-standard-2", sourceImage, "default", "default")
+		err := c.CreateInstance(context.Background(), zone, "instance89", "n1-standard-2", sourceImage, "default", "default")
 		convey.So(err, convey.ShouldBeNil)
 	})
 
@@ -31,14 +31,14 @@ func TestWorkFlow(t *testing.T) {
 		zone := "europe-west4-c"
 		c, _ := New(context.Background(), project, jsPath, log.Default(), log.Default())
 		sourceImage := "projects/debian-cloud/global/images/family/debian-9"
-		err := c.CreateInstance(context.Background(), zone, "instance90", "n1-standard-2", sourceImage, "pnetwork", "default")
+		err := c.CreateInstance(context.Background(), zone, "instance89", "n1-standard-2", sourceImage, "pnetwork", "default")
 		convey.So(err, convey.ShouldBeNil)
 
 		// Getting the instance
 		instance, err := c.GetInstance(context.Background(), zone, "instance89")
 
 		convey.So(err, convey.ShouldBeNil)
-		convey.So(instance.Name, convey.ShouldEqual, "instance90")
+		convey.So(instance.Name, convey.ShouldEqual, "instance89")
 		convey.So(instance.Status, convey.ShouldEqual, "RUNNING")
 
 		// Stopping the instance
